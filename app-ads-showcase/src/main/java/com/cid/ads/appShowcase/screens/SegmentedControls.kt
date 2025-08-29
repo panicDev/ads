@@ -1,0 +1,362 @@
+package com.cid.ads.appShowcase.screens
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.navigation.NavController
+import com.cid.ads.formItem.Checkbox
+import com.cid.ads.formItem.Checkboxes
+import com.cid.ads.formItem.FormItem
+import com.cid.ads.formItem.RadioButton
+import com.cid.ads.formItem.RadioButtons
+import com.cid.ads.formItem.Subhead
+import com.cid.ads.segmentedControls.button.MultiChoiceSegmentedButtonRow
+import com.cid.ads.segmentedControls.button.Segment
+import com.cid.ads.segmentedControls.button.SegmentedButtonDefaults
+import com.cid.ads.segmentedControls.button.SingleChoiceSegmentedButtonRow
+import com.cid.ads.segmentedControls.tabs.Segment
+import com.cid.ads.segmentedControls.tabs.SegmentedTabsDefaults
+import com.cid.ads.segmentedControls.tabs.SegmentedTabsRow
+import com.cid.ads.topAppBar.TopAppBarDefaults
+import com.cid.ads.topAppBar.rememberTopAppBarState
+import com.cid.adsSymbols.device.mobile.apple.button.DeviceMobileAppleButton
+import com.cid.adsSymbols.device.mobile.apple.island.DeviceMobileAppleIsland
+import com.cid.adsSymbols.device.mobile.apple.notch.DeviceMobileAppleNotch
+import com.cid.adsSymbols.foundation.IdsSymbols
+import com.cid.ads.appShowcase.R
+import com.cid.ads.appShowcase.componets.SampleRow
+import com.cid.ads.appShowcase.componets.SampleScaffold
+
+object SegmentedControls : Screen {
+    override val name: String = "Segmented controls"
+    override val image: Int = R.drawable.segmented_button
+
+    override val navigation: String = "segmented_controls"
+
+    @Composable
+    override fun Content(navController: NavController?) {
+        val topAppBarScrollBehavior =
+            TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
+        SampleScaffold(
+            title = name,
+            onBackClick = { navController?.navigateUp() },
+            topAppBarScrollBehavior = topAppBarScrollBehavior,
+        ) {
+            var state by remember { mutableIntStateOf(0) }
+            val sizeButton = SegmentedButtonDefaults.largeSizes()
+            val sizeTabs = SegmentedTabsDefaults.largeSizes()
+            var sizeButtonState by remember { mutableStateOf(sizeButton) }
+            var sizeTabsState by remember { mutableStateOf(sizeTabs) }
+            val (enabled, onEnabledChecked) = remember { mutableStateOf(true) }
+            var label by remember { mutableStateOf(true) }
+            var icon by remember { mutableStateOf(true) }
+            val styleStates = remember {
+                listOf(
+                    mutableStateOf(true),
+                    mutableStateOf(false)
+                )
+            }
+            val modeStates = remember {
+                listOf(
+                    mutableStateOf(true),
+                    mutableStateOf(false)
+                )
+            }
+
+            val singleChoiceSelectedState = remember {
+                listOf(
+                    mutableStateOf(true),
+                    mutableStateOf(false),
+                    mutableStateOf(false)
+                )
+            }
+            val multipleChoiceSelectedState = remember {
+                listOf(
+                    mutableStateOf(true),
+                    mutableStateOf(true),
+                    mutableStateOf(false)
+                )
+            }
+
+            val sizeStates = remember {
+                listOf(
+                    mutableStateOf(true),
+                    mutableStateOf(false),
+                    mutableStateOf(false)
+                )
+            }
+            val largeButton = SegmentedButtonDefaults.largeSizes()
+            val mediumButton = SegmentedButtonDefaults.mediumSizes()
+            val smallButton = SegmentedButtonDefaults.smallSizes()
+
+            val largeTabs = SegmentedTabsDefaults.largeSizes()
+            val mediumTabs = SegmentedTabsDefaults.mediumSizes()
+            val smallTabs = SegmentedTabsDefaults.smallSizes()
+
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .nestedScroll(topAppBarScrollBehavior.nestedScrollConnection)
+                    .verticalScroll(rememberScrollState())
+                    .padding(it)
+            ) {
+                SampleRow(
+                    text = "Sample",
+                    firstItem = true
+                ) {
+                    when {
+                        styleStates[0].value -> {
+                            SegmentedTabsRow(
+                                selectedIndex = state,
+                                sizes = sizeTabsState,
+                                enabled = enabled
+                            ) {
+                                Segment(
+                                    selected = singleChoiceSelectedState[0].value,
+                                    label = if (label) "Label 1" else null,
+                                    icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleIsland) else null,
+                                    onClick = {
+                                        singleChoiceSelectedState.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 0
+                                        }
+                                        state = 0
+                                    }
+                                )
+                                Segment(
+                                    selected = singleChoiceSelectedState[1].value,
+                                    label = if (label) "Label 2" else null,
+                                    icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleNotch) else null,
+                                    onClick = {
+                                        singleChoiceSelectedState.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 1
+                                        }
+                                        state = 1
+                                    }
+                                )
+                                Segment(
+                                    selected = singleChoiceSelectedState[2].value,
+                                    label = if (label) "Label 3" else null,
+                                    icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleButton) else null,
+                                    onClick = {
+                                        singleChoiceSelectedState.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 2
+                                        }
+                                        state = 2
+                                    }
+                                )
+                            }
+                        }
+
+                        styleStates[1].value -> {
+                            when {
+                                modeStates[0].value -> {
+                                    SingleChoiceSegmentedButtonRow(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        sizes = sizeButtonState,
+                                        enabled = enabled
+                                    ) {
+                                        Segment(
+                                            selected = singleChoiceSelectedState[0].value,
+                                            label = if (label) "Label 1" else null,
+                                            icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleIsland) else null,
+                                            onClick = {
+                                                singleChoiceSelectedState.forEachIndexed { index, mutableState ->
+                                                    mutableState.value = index == 0
+                                                }
+                                            }
+                                        )
+                                        Segment(
+                                            selected = singleChoiceSelectedState[1].value,
+                                            label = if (label) "Label 2" else null,
+                                            icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleIsland) else null,
+                                            onClick = {
+                                                singleChoiceSelectedState.forEachIndexed { index, mutableState ->
+                                                    mutableState.value = index == 1
+                                                }
+                                            }
+                                        )
+                                        Segment(
+                                            selected = singleChoiceSelectedState[2].value,
+                                            label = if (label) "Label 3" else null,
+                                            icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleButton) else null,
+                                            onClick = {
+                                                singleChoiceSelectedState.forEachIndexed { index, mutableState ->
+                                                    mutableState.value = index == 2
+                                                }
+                                            }
+                                        )
+                                    }
+                                }
+
+                                modeStates[1].value -> {
+                                    MultiChoiceSegmentedButtonRow(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        sizes = sizeButtonState,
+                                        enabled = enabled
+                                    ) {
+                                        Segment(
+                                            checked = multipleChoiceSelectedState[0].value,
+                                            label = if (label) "Label 1" else null,
+                                            icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleIsland) else null,
+                                            onCheckedChange = { isChecked ->
+                                                multipleChoiceSelectedState[0].value = isChecked
+                                            }
+                                        )
+                                        Segment(
+                                            checked = multipleChoiceSelectedState[1].value,
+                                            label = if (label) "Label 2" else null,
+                                            icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleNotch) else null,
+                                            onCheckedChange = { isChecked ->
+                                                multipleChoiceSelectedState[1].value = isChecked
+                                            }
+                                        )
+                                        Segment(
+                                            checked = multipleChoiceSelectedState[2].value,
+                                            label = if (label) "Label 3" else null,
+                                            icon = if (icon) rememberVectorPainter(image = IdsSymbols.Default.DeviceMobileAppleButton) else null,
+                                            onCheckedChange = { isChecked ->
+                                                multipleChoiceSelectedState[2].value = isChecked
+                                            }
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                FormItem(
+                    subhead = { Subhead(text = "Style") },
+                    content = {
+                        RadioButtons {
+                            RadioButton(
+                                text = "Tabs",
+                                selected = styleStates[0].value,
+                                onSelectedChange = {
+                                    styleStates.forEachIndexed { index, mutableState ->
+                                        mutableState.value = index == 0
+                                    }
+                                }
+                            )
+                            RadioButton(
+                                text = "Button",
+                                selected = styleStates[1].value,
+                                onSelectedChange = {
+                                    styleStates.forEachIndexed { index, mutableState ->
+                                        mutableState.value = index == 1
+                                    }
+                                }
+                            )
+                        }
+                    }
+                )
+                if (!styleStates[0].value) {
+                    FormItem(
+                        subhead = { Subhead(text = "Mode") },
+                        content = {
+                            RadioButtons {
+                                RadioButton(
+                                    text = "Single choice",
+                                    selected = modeStates[0].value,
+                                    onSelectedChange = {
+                                        modeStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 0
+                                        }
+                                    }
+                                )
+                                RadioButton(
+                                    text = "Multiple choice",
+                                    selected = modeStates[1].value,
+                                    onSelectedChange = {
+                                        modeStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 1
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    )
+                }
+                FormItem(
+                    subhead = { Subhead(text = "Size") },
+                    content = {
+                        RadioButtons {
+                            RadioButton(
+                                text = "Large",
+                                selected = sizeStates[0].value,
+                                onSelectedChange = {
+                                    sizeStates.forEachIndexed { index, mutableState ->
+                                        mutableState.value = index == 0
+                                    }
+                                    sizeButtonState = largeButton
+                                    sizeTabsState = largeTabs
+                                }
+                            )
+                            RadioButton(
+                                text = "Medium",
+                                selected = sizeStates[1].value,
+                                onSelectedChange = {
+                                    sizeStates.forEachIndexed { index, mutableState ->
+                                        mutableState.value = index == 1
+                                    }
+                                    sizeButtonState = mediumButton
+                                    sizeTabsState = mediumTabs
+                                }
+                            )
+                            RadioButton(
+                                text = "Small",
+                                selected = sizeStates[2].value,
+                                onSelectedChange = {
+                                    sizeStates.forEachIndexed { index, mutableState ->
+                                        mutableState.value = index == 2
+                                    }
+                                    sizeButtonState = smallButton
+                                    sizeTabsState = smallTabs
+                                }
+                            )
+                        }
+                    }
+                )
+                FormItem(
+                    subhead = { Subhead(text = "Settings") },
+                    content = {
+                        Checkboxes {
+                            Checkbox(
+                                text = "Leading",
+                                checked = icon,
+                                onCheckedChange = { isChecked ->
+                                    icon = isChecked
+                                    if (!label && !isChecked) label = true
+                                }
+                            )
+                            Checkbox(
+                                text = "Text",
+                                checked = label,
+                                onCheckedChange = { isChecked ->
+                                    label = isChecked
+                                    if (!icon && !isChecked) icon = true
+                                }
+                            )
+                            Checkbox(
+                                text = "Enabled",
+                                checked = enabled,
+                                onCheckedChange = onEnabledChecked
+                            )
+                        }
+                    }
+                )
+            }
+        }
+    }
+}

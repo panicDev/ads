@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="IdsDialogWindowTheme">
+        <item name="android:windowClipToOutline">false</item>
+    </style>
+
+    <style name="IdsFloatingDialogTheme">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="IdsFloatingDialogWindowTheme">
+        <item name="android:windowClipToOutline">false</item>
+        <item name="android:dialogTheme">@style/IdsFloatingDialogTheme</item>
+    </style>
+
+    <style name="IdsEdgeToEdgeFloatingDialogWindowTheme">
+        <item name="android:dialogTheme">@style/IdsEdgeToEdgeFloatingDialogTheme</item>
+    </style>
+
+    <style name="IdsEdgeToEdgeFloatingDialogTheme" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="27">
+            @integer/ids_window_layout_in_display_cutout_mode
+        </item>
+        <item name="android:windowClipToOutline">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowElevation">0dp</item>
+    </style>
+    <!-- "shortEdges" Value for windowLayoutInDisplayCutoutMode. Needed for APIs 27-29. -->
+    <integer name="ids_window_layout_in_display_cutout_mode">1</integer>
+</resources>

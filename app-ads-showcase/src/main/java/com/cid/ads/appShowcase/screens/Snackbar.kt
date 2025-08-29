@@ -1,0 +1,254 @@
+package com.cid.ads.appShowcase.screens
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.input.rememberTextFieldState
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.core.net.toUri
+import androidx.navigation.NavController
+import com.cid.ads.button.Button
+import com.cid.ads.button.ButtonDefaults
+import com.cid.ads.formItem.Checkbox
+import com.cid.ads.formItem.Checkboxes
+import com.cid.ads.formItem.FormItem
+import com.cid.ads.formItem.Input
+import com.cid.ads.formItem.RadioButton
+import com.cid.ads.formItem.RadioButtons
+import com.cid.ads.formItem.Subhead
+import com.cid.ads.foundation.AkaTheme
+import com.cid.ads.snackbar.Action
+import com.cid.ads.snackbar.Avatar
+import com.cid.ads.snackbar.Close
+import com.cid.ads.snackbar.Icon
+import com.cid.ads.snackbar.Image
+import com.cid.ads.snackbar.SnackbarDuration
+import com.cid.ads.snackbar.SnackbarHostState
+import com.cid.ads.snackbar.SnackbarPosition
+import com.cid.ads.snackbar.Timer
+import com.cid.adsSymbols.foundation.IdsSymbols
+import com.cid.adsSymbols.wifi.slash.WifiSlash
+import kotlinx.coroutines.launch
+import com.cid.ads.appShowcase.R
+import com.cid.ads.appShowcase.componets.SampleScaffold
+
+object Snackbar : Screen {
+
+    override val name: String = "Snackbar"
+
+    override val image: Int = R.drawable.snackbar
+
+    override val navigation: String = "snackbar"
+
+    @Composable
+    override fun Content(navController: NavController?) {
+        val snackbarHostState = remember { SnackbarHostState() }
+        val coroutineScope = rememberCoroutineScope()
+        val (showOnTop, showOnTopChange) = remember { mutableStateOf(false) }
+
+        val messageState = rememberTextFieldState("Message")
+
+        val (left, onLeftChange) = remember { mutableStateOf(false) }
+        val leftStates = remember {
+            listOf(
+                mutableStateOf(true),
+                mutableStateOf(false),
+                mutableStateOf(false),
+                mutableStateOf(false),
+            )
+        }
+
+        val (right, onRightChange) = remember { mutableStateOf(false) }
+        val rightStates = remember {
+            listOf(
+                mutableStateOf(true),
+                mutableStateOf(false),
+            )
+        }
+
+        SampleScaffold(
+            title = name,
+            onBackClick = {
+                navController?.navigateUp()
+            },
+            snackbarHostState = snackbarHostState,
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(it),
+            ) {
+                FormItem(
+                    subhead = { Subhead(text = "Message") },
+                    content = { Input(state = messageState) }
+                )
+                if (left) {
+                    FormItem(
+                        subhead = { Subhead(text = "Leading") },
+                        content = {
+                            RadioButtons {
+                                RadioButton(
+                                    text = "Icon",
+                                    selected = leftStates[0].value,
+                                    onSelectedChange = {
+                                        leftStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 0
+                                        }
+                                    }
+                                )
+                                RadioButton(
+                                    text = "Avatar",
+                                    selected = leftStates[1].value,
+                                    onSelectedChange = {
+                                        leftStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 1
+                                        }
+                                    }
+                                )
+                                RadioButton(
+                                    text = "Image",
+                                    selected = leftStates[2].value,
+                                    onSelectedChange = {
+                                        leftStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 2
+                                        }
+                                    }
+                                )
+                                RadioButton(
+                                    text = "Timer",
+                                    selected = leftStates[3].value,
+                                    onSelectedChange = {
+                                        leftStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 3
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    )
+                }
+                if (right) {
+                    FormItem(
+                        subhead = { Subhead(text = "Trailing") },
+                        content = {
+                            RadioButtons {
+                                RadioButton(
+                                    text = "Action",
+                                    selected = rightStates[0].value,
+                                    onSelectedChange = {
+                                        rightStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 0
+                                        }
+                                    }
+                                )
+                                RadioButton(
+                                    text = "Close",
+                                    selected = rightStates[1].value,
+                                    onSelectedChange = {
+                                        rightStates.forEachIndexed { index, mutableState ->
+                                            mutableState.value = index == 1
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    )
+                }
+                FormItem(
+                    subhead = { Subhead(text = "Settings") },
+                    content = {
+                        Checkboxes {
+                            Checkbox(
+                                text = "Leading",
+                                checked = left,
+                                onCheckedChange = onLeftChange
+                            )
+                            Checkbox(
+                                text = "Trailing",
+                                checked = right,
+                                onCheckedChange = onRightChange
+                            )
+                            Checkbox(
+                                text = "On top",
+                                checked = showOnTop,
+                                onCheckedChange = showOnTopChange
+                            )
+                        }
+                    }
+                )
+                Button(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = AkaTheme.spacing.size16)
+                        .padding(top = AkaTheme.spacing.size8),
+                    text = "Show snackbar",
+                    sizes = ButtonDefaults.largeSizes()
+                ) {
+                    snackbarHostState.currentSnackbarData?.dismiss()
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar(
+                            message = messageState.text.toString(),
+                            duration = SnackbarDuration.Short,
+                            hasProgress = leftStates[3].value,
+                            snackbarPosition = if (showOnTop) SnackbarPosition.Top else SnackbarPosition.Bottom,
+                            left = if (left) {
+                                {
+                                    when {
+                                        leftStates[0].value -> {
+                                            Icon(
+                                                icon = rememberVectorPainter(image = IdsSymbols.Default.WifiSlash),
+                                                contentDescription = ""
+                                            )
+                                        }
+
+                                        leftStates[1].value -> {
+                                            Avatar(
+                                                avatarUrl = "https://loremflickr.com/320/240".toUri()
+                                            )
+                                        }
+
+                                        leftStates[2].value -> {
+                                            Image(
+                                                imageUrl = "https://loremflickr.com/320/240".toUri()
+                                            )
+                                        }
+
+                                        leftStates[3].value -> {
+                                            Timer(
+                                                progress = 5f
+                                            )
+                                        }
+                                    }
+                                }
+                            } else null,
+                            right = if (right) {
+                                {
+                                    when {
+                                        rightStates[0].value -> {
+                                            Action(
+                                                text = "Action",
+                                                onClick = { data -> data.dismiss() }
+                                            )
+                                        }
+
+                                        rightStates[1].value -> {
+                                            Close()
+                                        }
+
+                                        else -> {}
+                                    }
+                                }
+                            } else null,
+                        )
+                    }
+                }
+            }
+        }
+    }
+}

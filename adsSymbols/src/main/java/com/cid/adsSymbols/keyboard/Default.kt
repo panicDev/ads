@@ -1,0 +1,209 @@
+package com.cid.adsSymbols.keyboard
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import com.cid.adsSymbols.foundation.IdsSymbols
+
+val IdsSymbols.Default.Keyboard: ImageVector
+    get() {
+        if (keyboard != null) {
+            return keyboard!!
+        }
+        keyboard = Builder(
+            name = "keyboard-default",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f
+        ).apply {
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(5f, 8.6f)
+                curveTo(5f, 8.269f, 5.269f, 8f, 5.6f, 8f)
+                horizontalLineTo(6.4f)
+                curveTo(6.731f, 8f, 7f, 8.269f, 7f, 8.6f)
+                verticalLineTo(9.4f)
+                curveTo(7f, 9.731f, 6.731f, 10f, 6.4f, 10f)
+                horizontalLineTo(5.6f)
+                curveTo(5.269f, 10f, 5f, 9.731f, 5f, 9.4f)
+                verticalLineTo(8.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(5.6f, 11f)
+                curveTo(5.269f, 11f, 5f, 11.269f, 5f, 11.6f)
+                verticalLineTo(12.4f)
+                curveTo(5f, 12.731f, 5.269f, 13f, 5.6f, 13f)
+                horizontalLineTo(6.4f)
+                curveTo(6.731f, 13f, 7f, 12.731f, 7f, 12.4f)
+                verticalLineTo(11.6f)
+                curveTo(7f, 11.269f, 6.731f, 11f, 6.4f, 11f)
+                horizontalLineTo(5.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(8.5f, 14f)
+                curveTo(8.224f, 14f, 8f, 14.224f, 8f, 14.5f)
+                verticalLineTo(15.5f)
+                curveTo(8f, 15.776f, 8.224f, 16f, 8.5f, 16f)
+                horizontalLineTo(15.5f)
+                curveTo(15.776f, 16f, 16f, 15.776f, 16f, 15.5f)
+                verticalLineTo(14.5f)
+                curveTo(16f, 14.224f, 15.776f, 14f, 15.5f, 14f)
+                horizontalLineTo(8.5f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(5f, 14.6f)
+                curveTo(5f, 14.269f, 5.269f, 14f, 5.6f, 14f)
+                horizontalLineTo(6.4f)
+                curveTo(6.731f, 14f, 7f, 14.269f, 7f, 14.6f)
+                verticalLineTo(15.4f)
+                curveTo(7f, 15.731f, 6.731f, 16f, 6.4f, 16f)
+                horizontalLineTo(5.6f)
+                curveTo(5.269f, 16f, 5f, 15.731f, 5f, 15.4f)
+                verticalLineTo(14.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(8.6f, 11f)
+                curveTo(8.269f, 11f, 8f, 11.269f, 8f, 11.6f)
+                verticalLineTo(12.4f)
+                curveTo(8f, 12.731f, 8.269f, 13f, 8.6f, 13f)
+                horizontalLineTo(9.4f)
+                curveTo(9.731f, 13f, 10f, 12.731f, 10f, 12.4f)
+                verticalLineTo(11.6f)
+                curveTo(10f, 11.269f, 9.731f, 11f, 9.4f, 11f)
+                horizontalLineTo(8.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(11f, 11.6f)
+                curveTo(11f, 11.269f, 11.269f, 11f, 11.6f, 11f)
+                horizontalLineTo(12.4f)
+                curveTo(12.731f, 11f, 13f, 11.269f, 13f, 11.6f)
+                verticalLineTo(12.4f)
+                curveTo(13f, 12.731f, 12.731f, 13f, 12.4f, 13f)
+                horizontalLineTo(11.6f)
+                curveTo(11.269f, 13f, 11f, 12.731f, 11f, 12.4f)
+                verticalLineTo(11.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(14.6f, 11f)
+                curveTo(14.269f, 11f, 14f, 11.269f, 14f, 11.6f)
+                verticalLineTo(12.4f)
+                curveTo(14f, 12.731f, 14.269f, 13f, 14.6f, 13f)
+                horizontalLineTo(15.4f)
+                curveTo(15.731f, 13f, 16f, 12.731f, 16f, 12.4f)
+                verticalLineTo(11.6f)
+                curveTo(16f, 11.269f, 15.731f, 11f, 15.4f, 11f)
+                horizontalLineTo(14.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(17f, 11.6f)
+                curveTo(17f, 11.269f, 17.269f, 11f, 17.6f, 11f)
+                horizontalLineTo(18.4f)
+                curveTo(18.731f, 11f, 19f, 11.269f, 19f, 11.6f)
+                verticalLineTo(12.4f)
+                curveTo(19f, 12.731f, 18.731f, 13f, 18.4f, 13f)
+                horizontalLineTo(17.6f)
+                curveTo(17.269f, 13f, 17f, 12.731f, 17f, 12.4f)
+                verticalLineTo(11.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(17.6f, 14f)
+                curveTo(17.269f, 14f, 17f, 14.269f, 17f, 14.6f)
+                verticalLineTo(15.4f)
+                curveTo(17f, 15.731f, 17.269f, 16f, 17.6f, 16f)
+                horizontalLineTo(18.4f)
+                curveTo(18.731f, 16f, 19f, 15.731f, 19f, 15.4f)
+                verticalLineTo(14.6f)
+                curveTo(19f, 14.269f, 18.731f, 14f, 18.4f, 14f)
+                horizontalLineTo(17.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(8.6f, 8f)
+                curveTo(8.269f, 8f, 8f, 8.269f, 8f, 8.6f)
+                verticalLineTo(9.4f)
+                curveTo(8f, 9.731f, 8.269f, 10f, 8.6f, 10f)
+                horizontalLineTo(9.4f)
+                curveTo(9.731f, 10f, 10f, 9.731f, 10f, 9.4f)
+                verticalLineTo(8.6f)
+                curveTo(10f, 8.269f, 9.731f, 8f, 9.4f, 8f)
+                horizontalLineTo(8.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(11f, 8.6f)
+                curveTo(11f, 8.269f, 11.269f, 8f, 11.6f, 8f)
+                horizontalLineTo(12.4f)
+                curveTo(12.731f, 8f, 13f, 8.269f, 13f, 8.6f)
+                verticalLineTo(9.4f)
+                curveTo(13f, 9.731f, 12.731f, 10f, 12.4f, 10f)
+                horizontalLineTo(11.6f)
+                curveTo(11.269f, 10f, 11f, 9.731f, 11f, 9.4f)
+                verticalLineTo(8.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(14.6f, 8f)
+                curveTo(14.269f, 8f, 14f, 8.269f, 14f, 8.6f)
+                verticalLineTo(9.4f)
+                curveTo(14f, 9.731f, 14.269f, 10f, 14.6f, 10f)
+                horizontalLineTo(15.4f)
+                curveTo(15.731f, 10f, 16f, 9.731f, 16f, 9.4f)
+                verticalLineTo(8.6f)
+                curveTo(16f, 8.269f, 15.731f, 8f, 15.4f, 8f)
+                horizontalLineTo(14.6f)
+                close()
+            }
+            path(fill = SolidColor(Color(0xFF000000))) {
+                moveTo(17f, 8.6f)
+                curveTo(17f, 8.269f, 17.269f, 8f, 17.6f, 8f)
+                horizontalLineTo(18.4f)
+                curveTo(18.731f, 8f, 19f, 8.269f, 19f, 8.6f)
+                verticalLineTo(9.4f)
+                curveTo(19f, 9.731f, 18.731f, 10f, 18.4f, 10f)
+                horizontalLineTo(17.6f)
+                curveTo(17.269f, 10f, 17f, 9.731f, 17f, 9.4f)
+                verticalLineTo(8.6f)
+                close()
+            }
+            path(
+                fill = SolidColor(Color(0xFF000000)),
+                pathFillType = PathFillType.EvenOdd
+            ) {
+                moveTo(6.5f, 4f)
+                curveTo(4.015f, 4f, 2f, 6.015f, 2f, 8.5f)
+                verticalLineTo(15.5f)
+                curveTo(2f, 17.985f, 4.015f, 20f, 6.5f, 20f)
+                horizontalLineTo(17.5f)
+                curveTo(19.985f, 20f, 22f, 17.985f, 22f, 15.5f)
+                verticalLineTo(8.5f)
+                curveTo(22f, 6.015f, 19.985f, 4f, 17.5f, 4f)
+                horizontalLineTo(6.5f)
+                close()
+                moveTo(4f, 8.5f)
+                curveTo(4f, 7.119f, 5.119f, 6f, 6.5f, 6f)
+                horizontalLineTo(17.5f)
+                curveTo(18.881f, 6f, 20f, 7.119f, 20f, 8.5f)
+                verticalLineTo(15.5f)
+                curveTo(20f, 16.881f, 18.881f, 18f, 17.5f, 18f)
+                horizontalLineTo(6.5f)
+                curveTo(5.119f, 18f, 4f, 16.881f, 4f, 15.5f)
+                verticalLineTo(8.5f)
+                close()
+            }
+        }.build()
+        return keyboard!!
+    }
+
+private var keyboard: ImageVector? = null
