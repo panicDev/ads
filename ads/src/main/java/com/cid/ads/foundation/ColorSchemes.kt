@@ -15,83 +15,77 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.takeOrElse
 import com.cid.ads.button.Button
 
-val Neutral50 = Color(0xFFF7F7F7)
-val Neutral100 = Color(0xFFEDEDED)
-val Neutral200 = Color(0xFFDFDFDF)
-val Neutral300 = Color(0xFFC8C8C8)
-val Neutral400 = Color(0xFFADADAD)
+val Neutral50 = Color(0xFFFAFAFA)
+val Neutral100 = Color(0xFFF5F5F5)
+val Neutral200 = Color(0xFFEEEEEE)
+val Neutral300 = Color(0xFFE0E0E0)
+val Neutral400 = Color(0xFFBDBDBD)
 val Neutral500 = Color(0xFF9E9E9E)
-val Neutral600 = Color(0xFF888888)
-val Neutral700 = Color(0xFF7B7B7B)
-val Neutral800 = Color(0xFF676767)
-val Neutral900 = Color(0xFF545454)
-val Neutral950 = Color(0xFF363636)
+val Neutral600 = Color(0xFF757575)
+val Neutral700 = Color(0xFF616161)
+val Neutral800 = Color(0xFF424242)
+val Neutral900 = Color(0xFF212121)
 
 // Primary Colors
-val Primary50 = Color(0xFFFFF4ED)
-val Primary100 = Color(0xFFFFE6D4)
-val Primary200 = Color(0xFFFFC8A8)
-val Primary300 = Color(0xFFFFA270)
-val Primary400 = Color(0xFFFF6F37)
-val Primary500 = Color(0xFFFF5722)
-val Primary600 = Color(0xFFF02E06)
-val Primary700 = Color(0xFFC71E07)
-val Primary800 = Color(0xFF9E1A0E)
-val Primary900 = Color(0xFF7F190F)
-val Primary950 = Color(0xFF450805)
+val Primary100 = Color(0xFFE1F4FE) // paling terang
+val Primary200 = Color(0xFFB8E5FD)
+val Primary300 = Color(0xFF8DD3FB)
+val Primary400 = Color(0xFF6FC4FA)
+val Primary500 = Color(0xFF61BBF9) // warna dasar
+val Primary600 = Color(0xFF4BA2E0)
+val Primary700 = Color(0xFF3B83B8)
+val Primary800 = Color(0xFF2B648E)
+val Primary900 = Color(0xFF1B4565) // paling gelap
+
+val Danger100 = Color(0xFFFDECEC)
+val Danger200 = Color(0xFFFABEBE)
+val Danger300 = Color(0xFFF79090)
+val Danger400 = Color(0xFFF56D6D)
+val Danger500 = Color(0xFFF75555) // base
+val Danger600 = Color(0xFFD84343)
+val Danger700 = Color(0xFFB23535)
+val Danger800 = Color(0xFF8C2727)
+val Danger900 = Color(0xFF661A1A)
 
 
-// Success Colors
-val Green50 = Color(0xFFF3FAF3)
-val Green100 = Color(0xFFE3F5E3)
-val Green200 = Color(0xFFC8EAC9)
-val Green300 = Color(0xFF9DD89F)
-val Green400 = Color(0xFF6BBD6E)
-val Green500 = Color(0xFF4CAF50)
-val Green600 = Color(0xFF358438)
-val Green700 = Color(0xFF2D6830)
-val Green800 = Color(0xFF275429)
-val Green900 = Color(0xFF224525)
-val Green950 = Color(0xFF0E2510)
+val Success100 = Color(0xFFE8F5E9)
+val Success200 = Color(0xFFC8E6C9)
+val Success300 = Color(0xFFA5D6A7)
+val Success400 = Color(0xFF81C784)
+val Success500 = Color(0xFF4CAF50) // base
+val Success600 = Color(0xFF43A047)
+val Success700 = Color(0xFF388E3C)
+val Success800 = Color(0xFF2E7D32)
+val Success900 = Color(0xFF1B5E20)
 
-// Error Colors
-val Red50 = Color(0xFFFEF3F2)
-val Red100 = Color(0xFFFFE3E1)
-val Red200 = Color(0xFFFFCCC8)
-val Red300 = Color(0xFFFFA8A2)
-val Red400 = Color(0xFFFFA8A2)
-val Red500 = Color(0xFFF44336)
-val Red600 = Color(0xFFE22D20)
-val Red700 = Color(0xFFBE2217)
-val Red800 = Color(0xFF9D2017)
-val Red900 = Color(0xFF82211A)
-val Red950 = Color(0xFF470C08)
+val Warning100 = Color(0xFFFFF3E0)
+val Warning200 = Color(0xFFFFE0B2)
+val Warning300 = Color(0xFFFFCC80)
+val Warning400 = Color(0xFFFFB74D)
+val Warning500 = Color(0xFFFF9800) // base
+val Warning600 = Color(0xFFFB8C00)
+val Warning700 = Color(0xFFF57C00)
+val Warning800 = Color(0xFFEF6C00)
+val Warning900 = Color(0xFFE65100)
 
-//Warning Colors
-val Yellow50 = Color(0xFFFFFFEA)
-val Yellow100 = Color(0xFFFFFBC5)
-val Yellow200 = Color(0xFFFFF885)
-val Yellow300 = Color(0xFFFFEE46)
-val Yellow400 = Color(0xFFFFDF1B)
-val Yellow500 = Color(0xFFFFC107)
-val Yellow600 = Color(0xFFE29400)
-val Yellow700 = Color(0xFFBB6902)
-val Yellow800 = Color(0xFF985108)
-val Yellow900 = Color(0xFF7C420B)
-val Yellow950 = Color(0xFF482200)
+val Info100 = Color(0xFFE3F2FD)
+val Info200 = Color(0xFFBBDEFB)
+val Info300 = Color(0xFF90CAF9)
+val Info400 = Color(0xFF64B5F6)
+val Info500 = Color(0xFF2196F3) // base
+val Info600 = Color(0xFF1E88E5)
+val Info700 = Color(0xFF1976D2)
+val Info800 = Color(0xFF1565C0)
+val Info900 = Color(0xFF0D47A1)
 
-// Secondary Colors
-val Blue50 = Color(0xFFEFF9FF)
-val Blue100 = Color(0xFFDEF2FF)
-val Blue200 = Color(0xFFB7E7FF)
-val Blue300 = Color(0xFF77D5FF)
-val Blue400 = Color(0xFF2EC1FF)
-val Blue500 = Color(0xFF03A9F4)
-val Blue600 = Color(0xFF0087D1)
-val Blue700 = Color(0xFF006BA9)
-val Blue800 = Color(0xFF015B8B)
-val Blue900 = Color(0xFF074B73)
-val Blue950 = Color(0xFF05304C)
+val BgBodyMain = Color(0xFFF9FAFC)
+val BgBody1 = Color(0xFFF8FAFF)
+val BgBody2 = Color(0xFFEDEFF6)
+val BgBody3 = Color(0xFFE2E4EC)
+val BgLight = Color(0xFFFBFBFB)
+
+
+
 
 
 /**
@@ -387,26 +381,26 @@ fun lightColorScheme(
     onPrimary: Color = Color(0xFFFFFFFF),
     primaryContainer: Color = Primary100,
     onPrimaryContainer: Color = Primary900,
-    secondary: Color = Blue500,
+    secondary: Color = Primary500,
     onSecondary: Color = Color(0xFFFFFFFF),
-    secondaryContainer: Color = Blue100,
-    onSecondaryContainer: Color = Blue900,
-    tertiary: Color = Green400,
+    secondaryContainer: Color = Primary100,
+    onSecondaryContainer: Color = Primary900,
+    tertiary: Color = Success400,
     onTertiary: Color = Color(0xFFFFFFFF),
-    tertiaryContainer: Color = Green100,
-    onTertiaryContainer: Color = Green900,
-    error: Color = Red500,
+    tertiaryContainer: Color = Success100,
+    onTertiaryContainer: Color = Success900,
+    error: Color = Danger500,
     onError: Color = Color(0xFFFFFFFF),
-    errorContainer: Color = Red100,
-    onErrorContainer: Color = Red900,
-    valid: Color = Green600,
+    errorContainer: Color = Danger100,
+    onErrorContainer: Color = Danger900,
+    valid: Color = Success500,
     onValid: Color = Color(0xFFFFFFFF),
-    validContainer: Color =  Green100,
-    onValidContainer: Color = Green900,
-    warning: Color = Yellow600,
+    validContainer: Color =  Success100,
+    onValidContainer: Color = Success900,
+    warning: Color = Warning500,
     onWarning: Color = Color(0xFFFFFFFF),
-    warningContainer: Color = Yellow100,
-    onWarningContainer: Color = Yellow900,
+    warningContainer: Color = Warning100,
+    onWarningContainer: Color = Warning900,
     surface: Color = Neutral50,
     onSurface: Color = Neutral900,
     onSurfaceVariant: Color = Neutral700,
@@ -469,27 +463,27 @@ fun darkColorScheme(
     onPrimary: Color = Color.Black,
     primaryContainer: Color = Primary900,
     onPrimaryContainer: Color = Primary100,
-    secondary: Color = Blue400,
+    secondary: Color = Primary400,
     onSecondary: Color = Color.Black,
-    secondaryContainer: Color = Blue900,
-    onSecondaryContainer: Color = Blue100,
-    tertiary: Color = Green400,
+    secondaryContainer: Color = Primary900,
+    onSecondaryContainer: Color = Primary100,
+    tertiary: Color = Success400,
     onTertiary: Color = Color.Black,
-    tertiaryContainer: Color = Green900,
-    onTertiaryContainer: Color = Green100,
-    error: Color = Red400,
+    tertiaryContainer: Color = Success900,
+    onTertiaryContainer: Color = Success100,
+    error: Color = Danger400,
     onError: Color = Color.Black,
-    errorContainer: Color = Red900,
-    onErrorContainer: Color = Red100,
-    valid: Color = Green500,
+    errorContainer: Color = Danger900,
+    onErrorContainer: Color = Danger100,
+    valid: Color = Success500,
     onValid: Color = Color.Black,
-    validContainer: Color = Green900,
-    onValidContainer: Color = Green100,
-    warning: Color = Yellow500,
+    validContainer: Color = Success900,
+    onValidContainer: Color = Success100,
+    warning: Color = Warning500,
     onWarning: Color = Color.Black,
-    warningContainer: Color = Yellow900,
-    onWarningContainer: Color = Yellow100,
-    surface: Color = Neutral950,
+    warningContainer: Color = Warning900,
+    onWarningContainer: Color = Warning100,
+    surface: Color = Neutral900,
     onSurface: Color = Neutral100,
     onSurfaceVariant: Color = Neutral300,
     outline: Color = Neutral600,
@@ -497,7 +491,7 @@ fun darkColorScheme(
     scrim: Color = Color(0xFF000000),
     surfaceDim: Color = Neutral900,
     surfaceBright: Color = Neutral800,
-    surfaceContainerLowest: Color = Neutral950,
+    surfaceContainerLowest: Color = Neutral900,
     surfaceContainerLow: Color = Neutral900,
     surfaceContainer: Color = Neutral800,
     surfaceContainerHigh: Color = Neutral700,

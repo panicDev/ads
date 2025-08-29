@@ -45,7 +45,7 @@ import com.cid.ads.R
 @Immutable
 class Typography(
     val displayLarge: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 57.sp,
@@ -53,7 +53,7 @@ class Typography(
         letterSpacing = (-0.25).sp,
     ),
     val displayMedium: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 45.sp,
@@ -61,7 +61,7 @@ class Typography(
         letterSpacing = (-0.25).sp,
     ),
     val displaySmall: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 36.sp,
@@ -69,7 +69,7 @@ class Typography(
         letterSpacing = (-0.25).sp,
     ),
     val headlineLarge: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 32.sp,
@@ -77,7 +77,7 @@ class Typography(
         letterSpacing = 0.sp
     ),
     val headlineMedium: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 28.sp,
@@ -85,7 +85,7 @@ class Typography(
         letterSpacing = 0.sp
     ),
     val headlineSmall: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 24.sp,
@@ -93,7 +93,7 @@ class Typography(
         letterSpacing = 0.sp
     ),
     val titleLarge: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 22.sp,
@@ -101,7 +101,7 @@ class Typography(
         letterSpacing = 0.05.sp,
     ),
     val titleMedium: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -109,7 +109,7 @@ class Typography(
         letterSpacing = 0.05.sp
     ),
     val titleSmall: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -117,7 +117,7 @@ class Typography(
         letterSpacing = 0.05.sp,
     ),
     val bodyLarge: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -125,7 +125,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val bodyMedium: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -133,7 +133,7 @@ class Typography(
         letterSpacing = 0.25.sp,
     ),
     val bodySmall: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 12.sp,
@@ -141,7 +141,7 @@ class Typography(
         letterSpacing = 0.4.sp,
     ),
     val buttonLarge: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.ExtraBold,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -149,7 +149,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val buttonMedium: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.ExtraBold,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -157,7 +157,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val buttonSmall: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.ExtraBold,
         fontStyle = FontStyle.Normal,
         fontSize = 12.sp,
@@ -165,7 +165,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val labelLarge: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -173,7 +173,7 @@ class Typography(
         letterSpacing = 0.2.sp,
     ),
     val labelMedium: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -181,7 +181,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val labelSmall: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 12.sp,
@@ -189,63 +189,12 @@ class Typography(
         letterSpacing = 0.2.sp,
     ),
     val labelExtraSmall: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
+        fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 11.sp,
         lineHeight = 14.sp,
         letterSpacing = 0.2.sp,
-    ),
-    // based from figma
-    val bold20: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Bold,
-        fontStyle = FontStyle.Normal,
-        fontSize = 20.sp,
-    ),
-    val bold16: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Bold,
-        fontStyle = FontStyle.Normal,
-        fontSize = 16.sp,
-    ),
-    val bold14: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Bold,
-        fontStyle = FontStyle.Normal,
-        fontSize = 14.sp,
-    ),
-    val bold10: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Bold,
-        fontStyle = FontStyle.Normal,
-        fontSize = 10.sp,
-    ),
-
-
-    val regular20: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontStyle = FontStyle.Normal,
-        fontSize = 20.sp,
-    ),
-    val regular16: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontStyle = FontStyle.Normal,
-        fontSize = 16.sp,
-    ),
-    val regular14: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontStyle = FontStyle.Normal,
-        fontSize = 14.sp,
-    ),
-    val regular10: TextStyle = TextStyle(
-        fontFamily = manropeFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontStyle = FontStyle.Normal,
-        fontSize = 10.sp,
     ),
 ) {
 
@@ -442,23 +391,5 @@ val interFontFamily = FontFamily(
         resId = R.font.inter_black_italic,
         weight = FontWeight.Black,
         style = FontStyle.Italic
-    ),
-)
-
-val manropeFontFamily = FontFamily(
-    Font(
-        resId = R.font.manrope_extralight,
-        weight = FontWeight.ExtraLight,
-        style = FontStyle.Normal
-    ),
-    Font(resId = R.font.manrope_light, weight = FontWeight.Light, style = FontStyle.Normal),
-    Font(resId = R.font.manrope_regular, weight = FontWeight.Normal, style = FontStyle.Normal),
-    Font(resId = R.font.manrope_medium, weight = FontWeight.Medium, style = FontStyle.Normal),
-    Font(resId = R.font.manrope_bold, weight = FontWeight.Bold, style = FontStyle.Normal),
-    Font(resId = R.font.manrope_semibold, weight = FontWeight.SemiBold, style = FontStyle.Normal),
-    Font(
-        resId = R.font.manrope_extrabold,
-        weight = FontWeight.ExtraBold,
-        style = FontStyle.Normal
     ),
 )
