@@ -6,6 +6,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.structuralEqualityPolicy
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -45,7 +46,7 @@ import com.cid.ads.R
 @Immutable
 class Typography(
     val displayLarge: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 57.sp,
@@ -53,7 +54,7 @@ class Typography(
         letterSpacing = (-0.25).sp,
     ),
     val displayMedium: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 45.sp,
@@ -61,7 +62,7 @@ class Typography(
         letterSpacing = (-0.25).sp,
     ),
     val displaySmall: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 36.sp,
@@ -69,7 +70,7 @@ class Typography(
         letterSpacing = (-0.25).sp,
     ),
     val headlineLarge: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 32.sp,
@@ -77,7 +78,7 @@ class Typography(
         letterSpacing = 0.sp
     ),
     val headlineMedium: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 28.sp,
@@ -85,7 +86,7 @@ class Typography(
         letterSpacing = 0.sp
     ),
     val headlineSmall: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 24.sp,
@@ -93,7 +94,7 @@ class Typography(
         letterSpacing = 0.sp
     ),
     val titleLarge: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 22.sp,
@@ -101,7 +102,7 @@ class Typography(
         letterSpacing = 0.05.sp,
     ),
     val titleMedium: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -109,7 +110,7 @@ class Typography(
         letterSpacing = 0.05.sp
     ),
     val titleSmall: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -117,7 +118,7 @@ class Typography(
         letterSpacing = 0.05.sp,
     ),
     val bodyLarge: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -125,7 +126,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val bodyMedium: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -133,7 +134,7 @@ class Typography(
         letterSpacing = 0.25.sp,
     ),
     val bodySmall: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
         fontSize = 12.sp,
@@ -141,7 +142,7 @@ class Typography(
         letterSpacing = 0.4.sp,
     ),
     val buttonLarge: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.ExtraBold,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -149,7 +150,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val buttonMedium: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.ExtraBold,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -157,7 +158,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val buttonSmall: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.ExtraBold,
         fontStyle = FontStyle.Normal,
         fontSize = 12.sp,
@@ -165,7 +166,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val labelLarge: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
@@ -173,7 +174,7 @@ class Typography(
         letterSpacing = 0.2.sp,
     ),
     val labelMedium: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 14.sp,
@@ -181,7 +182,7 @@ class Typography(
         letterSpacing = 0.5.sp,
     ),
     val labelSmall: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 12.sp,
@@ -189,7 +190,7 @@ class Typography(
         letterSpacing = 0.2.sp,
     ),
     val labelExtraSmall: TextStyle = TextStyle(
-        fontFamily = interFontFamily,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontStyle = FontStyle.Normal,
         fontSize = 11.sp,
@@ -343,53 +344,30 @@ fun ProvideTextStyle(value: TextStyle, content: @Composable () -> Unit) {
     CompositionLocalProvider(LocalTextStyle provides mergedStyle, content = content)
 }
 
-val interFontFamily = FontFamily(
-    Font(resId = R.font.inter_thin, weight = FontWeight.Thin, style = FontStyle.Normal),
-    Font(resId = R.font.inter_thin_italic, weight = FontWeight.Thin, style = FontStyle.Italic),
-    Font(
-        resId = R.font.inter_extra_light,
-        weight = FontWeight.ExtraLight,
-        style = FontStyle.Normal
-    ),
-    Font(
-        resId = R.font.inter_extra_light_italic,
-        weight = FontWeight.ExtraLight,
-        style = FontStyle.Italic
-    ),
-    Font(resId = R.font.inter_light, weight = FontWeight.Light, style = FontStyle.Normal),
-    Font(
-        resId = R.font.inter_light_italic,
-        weight = FontWeight.Light,
-        style = FontStyle.Italic
-    ),
-    Font(resId = R.font.inter_regular, weight = FontWeight.Normal, style = FontStyle.Normal),
-    Font(
-        resId = R.font.inter_regular_italic,
-        weight = FontWeight.Normal,
-        style = FontStyle.Italic
-    ),
-    Font(resId = R.font.inter_medium, weight = FontWeight.Medium, style = FontStyle.Normal),
-    Font(
-        resId = R.font.inter_medium_italic,
-        weight = FontWeight.Medium,
-        style = FontStyle.Italic
-    ),
-    Font(resId = R.font.inter_bold, weight = FontWeight.Bold, style = FontStyle.Normal),
-    Font(resId = R.font.inter_bold_italic, weight = FontWeight.Bold, style = FontStyle.Italic),
-    Font(
-        resId = R.font.inter_extra_bold,
-        weight = FontWeight.ExtraBold,
-        style = FontStyle.Normal
-    ),
-    Font(
-        resId = R.font.inter_extra_bold_italic,
-        weight = FontWeight.ExtraBold,
-        style = FontStyle.Italic
-    ),
-    Font(resId = R.font.inter_black, weight = FontWeight.Black, style = FontStyle.Normal),
-    Font(
-        resId = R.font.inter_black_italic,
-        weight = FontWeight.Black,
-        style = FontStyle.Italic
-    ),
+
+/**
+ * Creates a TextStyle with the Manrope font family and specified parameters.
+ *
+ * @param fontSize The font size in sp
+ * @param fontWeight The font weight (default: FontWeight.Normal)
+ * @param fontStyle The font style (default: FontStyle.Normal)
+ * @param lineHeight Optional line height in sp
+ * @param letterSpacing Optional letter spacing in sp
+ * @return A configured TextStyle instance
+ */
+fun createTextStyle(
+    fontSize: Int,
+    fontWeight: FontWeight = FontWeight.Normal,
+    fontStyle: FontStyle = FontStyle.Normal,
+    lineHeight: Int? = null,
+    letterSpacing: Float? = null,
+    color: Color = Neutral900
+) = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = fontWeight,
+    fontStyle = fontStyle,
+    fontSize = fontSize.sp,
+    lineHeight = lineHeight?.sp ?: (fontSize.sp * 1.2f), // Default to 1.2x font size if not specified
+    letterSpacing = letterSpacing?.sp ?: 0.sp,
+    color = color
 )
